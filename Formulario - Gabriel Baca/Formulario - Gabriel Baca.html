@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F9BDFF;
+            margin: 50px;
+        }
+
+        form {
+            background-color: #F2F2F2;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"], 
+        input[type="date"], 
+        input[type="email"],
+        select, 
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+
+<form action="#" method="post">
+    <h1>Formulario de CV</h1>
+    
+    <label for="nombre">Nombre y Apellidos:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+
+    <label for="ocupacion">Ocupación:</label>
+    <input type="text" id="ocupacion" name="ocupacion" required><br><br>
+
+    <label>Contacto:</label><br>
+    <label for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" name="telefono" required><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="nacionalidad">Nacionalidad:</label>
+    <select id="nacionalidad" name="nacionalidad">
+        <option value="Peru">Perú</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Ecuador">Ecuador</option>
+        <option value="Bolivia">Bolivia</option>
+        <option value="Chile">Chile</option>
+    </select><br><br>
+
+    <label>Nivel de ingles:</label><br>
+    <input type="radio" id="basico" name="nivel_ingles" value="basico" required>
+    <label for="basico">Básico</label><br>
+    <input type="radio" id="intermedio" name="nivel_ingles" value="intermedio">
+    <label for="intermedio">Intermedio</label><br>
+    <input type="radio" id="avanzado" name="nivel_ingles" value="avanzado">
+    <label for="avanzado">Avanzado</label><br>
+    <input type="radio" id="fluido" name="nivel_ingles" value="fluido">
+    <label for="fluido">Fluido</label><br><br>
+
+    <label for="lenguajes">Lenguajes de programación:</label><br>
+    <select id="lenguajes" name="lenguajes[]" multiple>
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="C#">C#</option>
+        <option value="Swift">Swift</option>
+        <option value="PHP">PHP</option>
+    
+    </select><br><br>
+
+    <label for="aptitudes">Aptitudes:</label>
+    <input list="aptitudes_list" name="aptitudes">
+    <datalist id="aptitudes_list">
+        <option value="Trabajo en equipo">
+        <option value="Resolución de problemas">
+        <option value="Proactividad">
+        
+    </datalist><br><br>
+
+    <label>Habilidades:</label><br>
+    <input type="checkbox" id="Liderazgo" name="habilidades[]" value="habilidad1">
+    <label for="habilidad1">Liderazgo</label><br>
+    <input type="checkbox" id="Habilidades Tecnicas" name="habilidades[]" value="habilidad2">
+    <label for="habilidad2">Habilidades Tecnicas</label><br>
+
+    <br>
+
+    <label for="perfil">Perfil:</label><br>
+    <textarea id="perfil" name="perfil" rows="4" cols="50"></textarea><br><br>
+
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>
