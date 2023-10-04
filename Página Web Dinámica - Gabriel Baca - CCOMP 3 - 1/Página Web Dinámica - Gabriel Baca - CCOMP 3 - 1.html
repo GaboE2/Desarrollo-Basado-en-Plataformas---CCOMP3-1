@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de CV con Imagen Ajustada</title>
+    
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        background-color: #f4f4f4;
+    }
+    .input-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .submit-btn {
+        text-align: center;
+    }
+    input[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #555;
+    }
+</style>
+
+</head>
+<body>
+    
+<form id="cvForm" onsubmit="return showCV();">
+    <div class="input-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+    </div>
+    <div class="input-group">
+        <label for="telefono">Número de teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+    </div>
+    <div class="input-group">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+    </div>
+    <div class="input-group">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+    </div>
+    <div class="input-group">
+        <label for="experiencia">Experiencia Laboral:</label>
+        <input type="text" id="experiencia" name="experiencia" required>
+    </div>
+    <div class="input-group">
+        <label for="formacion">Formación:</label>
+        <input type="text" id="formacion" name="formacion" required>
+    </div>
+    <div class="input-group">
+        <label for="idiomas">Idiomas:</label>
+        <input type="text" id="idiomas" name="idiomas" required>
+    </div>
+    <div class="input-group">
+        <label for="aptitudes">Aptitudes y Habilidades:</label>
+        <input type="text" id="aptitudes" name="aptitudes" required>
+    </div>
+    <div class="submit-btn">
+        <input type="submit" value="Enviar">
+    </div>
+</form>
+
+    
+<div id="cvContent" style="display: none; background-color: #FAF3E0; padding: 40px; border-radius: 8px; margin-top: 40px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex;">
+    <div style="flex: 1; padding-right: 20px; border-right: 2px solid #D1BFA3;">
+        <img src="https://canadian-passport-support.com/wp-content/uploads/2014/09/businessman.png" alt="Foto de José Martínez" style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    </div>
+    <div style="flex: 3; padding-left: 20px;">
+        <h1 style="color: #333; border-bottom: 2px solid #D1BFA3; padding-bottom: 10px;">Nombre del Usuario</h1>
+        <p id="cvTelefono" style="color: #555;"><span>📞</span> Teléfono: </p>
+        <p id="cvCorreo" style="color: #555;"><span>📧</span> Correo: </p>
+        <p id="cvDireccion" style="color: #555;"><span>📍</span> Dirección: </p>
+        <section style="margin-top: 20px;">
+            <h2 style="color: #7A6652;"><span>🌐</span> Experiencia Laboral</h2>
+            <p id="cvExperiencia" style="color: #555;"></p>
+        </section>
+        <section style="margin-top: 20px;">
+            <h2 style="color: #7A6652;">Formación</h2>
+            <p id="cvFormacion" style="color: #555;"></p>
+        </section>
+        <section style="margin-top: 20px;">
+            <h2 style="color: #7A6652;">Idiomas</h2>
+            <p id="cvIdiomas" style="color: #555;"></p>
+        </section>
+        <section style="margin-top: 20px;">
+            <h2 style="color: #7A6652;">Aptitudes y Habilidades</h2>
+            <p id="cvAptitudes" style="color: #555;"></p>
+        </section>
+    </div>
+</div>
+
+    
+<script type="text/javascript">
+    function showCV() {
+        var cvContent = document.getElementById('cvContent');
+        var formData = new FormData(document.forms['cvForm']);
+        
+        cvContent.querySelector('h1').innerText = formData.get('nombre');
+        cvContent.querySelector('#cvTelefono').innerText = 'Teléfono: ' + formData.get('telefono');
+        cvContent.querySelector('#cvCorreo').innerText = 'Correo: ' + formData.get('correo');
+        cvContent.querySelector('#cvDireccion').innerText = 'Dirección: ' + formData.get('direccion');
+        cvContent.querySelector('#cvExperiencia').innerText = formData.get('experiencia');
+        cvContent.querySelector('#cvFormacion').innerText = formData.get('formacion');
+        cvContent.querySelector('#cvIdiomas').innerText = formData.get('idiomas');
+        cvContent.querySelector('#cvAptitudes').innerText = formData.get('aptitudes');
+        
+        cvContent.style.display = 'block';
+        return false;
+</script>
+
+</body>
+</html>
