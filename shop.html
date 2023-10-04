@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tienda de Puntos VALORANT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('https://images2.alphacoders.com/132/1322753.jpeg'); background-size: cover; background-repeat: no-repeat;">
+    <div class="navbar">
+        <div class="cart">
+            🛒 <span id="cart-count">0</span>
+        </div>
+        <div class="nav-center">
+            <button class="nav-btn" id="home-btn">Inicio</button>
+            <button class="nav-btn" id="shop-btn">Compra</button>
+            <button class="nav-btn" id="profile-btn">Perfil</button>
+        </div>
+        <div class="nav-right">
+            <button class="nav-btn">Login</button>
+            <button class="nav-btn">Register</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section main-section" id="home-section">
+            <h1>¡Bienvenido a la tienda VALORANT!</h1>
+            <p>Compra puntos VALORANT para adquirir aspectos, pases de batalla y más.</p>
+        </div>
+        <div class="section shop-section" id="shop-section">
+            <h2>Elige la cantidad de puntos que deseas:</h2>
+            <div class="shop">
+                <img src="{valorant_image_url}" alt="Valorant Points">
+                <button class="shop-btn" data-value="1000">Comprar 1000 Puntos</button>
+                <img src="{valorant_image_url}" alt="Valorant Points">
+                <button class="shop-btn" data-value="5000">Comprar 5000 Puntos</button>
+                <img src="{valorant_image_url}" alt="Valorant Points">
+                <button class="shop-btn" data-value="6000">Comprar 6000 Puntos</button>
+                <img src="{valorant_image_url}" alt="Valorant Points">
+                <button class="shop-btn" data-value="8000">Comprar 8000 Puntos</button>
+                <img src="{valorant_image_url}" alt="Valorant Points">
+                <button class="shop-btn" data-value="10000">Comprar 10000 Puntos</button>
+                <img src="{valorant_image_url}" alt="Valorant Points">
+                <button class="shop-btn" data-value="12000">Comprar 12000 Puntos</button>
+            </div>
+        </div>
+        <div class="section profile-section" id="profile-section">
+            <h2>Información de tu perfil</h2>
+            <p>¡Próximamente!</p>
+        </div>
+    </div>
+    <script>
+        const cartCount = document.getElementById('cart-count');
+        const shopButtons = document.querySelectorAll('.shop-btn');
+        const homeBtn = document.getElementById('home-btn');
+        const shopBtn = document.getElementById('shop-btn');
+        const profileBtn = document.getElementById('profile-btn');
+        const homeSection = document.getElementById('home-section');
+        const shopSection = document.getElementById('shop-section');
+        const profileSection = document.getElementById('profile-section');
+        
+        // Add points to cart
+        shopButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                const currentCount = parseInt(cartCount.textContent);
+                cartCount.textContent = currentCount + value;
+            });
+        });
+
+        // Navbar button actions
+        homeBtn.addEventListener('click', function() {
+            homeSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        shopBtn.addEventListener('click', function() {
+            shopSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        profileBtn.addEventListener('click', function() {
+            profileSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

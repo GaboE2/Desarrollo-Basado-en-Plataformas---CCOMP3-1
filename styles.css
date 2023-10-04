@@ -1,0 +1,136 @@
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.login-btn, .register-btn, .buy-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover, .register-btn:hover, .buy-btn:hover {
+    background-color: #555;
+    color: white;
+}
+
+.store {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 50px auto;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.cart {
+    margin-right: 20px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #ddd;
+}
+
+.cart {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.shop {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shop-btn {
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF4654;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.shop-btn:hover {
+    background-color: #FF6B73;
+}
+
+
+.section {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.shop-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.shop-item img {
+    margin-bottom: 10px;
+}
