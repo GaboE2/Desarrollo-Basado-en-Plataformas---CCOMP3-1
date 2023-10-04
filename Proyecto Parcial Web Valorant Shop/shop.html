@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tienda de Puntos VALORANT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('https://images2.alphacoders.com/132/1322753.jpeg'); background-size: cover; background-repeat: no-repeat;">
+    <div class="navbar">
+        <button class="nav-btn">Login</button>
+        <button class="nav-btn">Register</button>
+        <div class="cart">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </div>
+    <div class="shop">
+        <button class="shop-btn" data-value="1000">Comprar 1000 Puntos</button>
+        <button class="shop-btn" data-value="5000">Comprar 5000 Puntos</button>
+        <button class="shop-btn" data-value="6000">Comprar 6000 Puntos</button>
+        <button class="shop-btn" data-value="8000">Comprar 8000 Puntos</button>
+        <button class="shop-btn" data-value="10000">Comprar 10000 Puntos</button>
+        <button class="shop-btn" data-value="12000">Comprar 12000 Puntos</button>
+    </div>
+    <script>
+        const cartCount = document.getElementById('cart-count');
+        const shopButtons = document.querySelectorAll('.shop-btn');
+        
+        shopButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                const currentCount = parseInt(cartCount.textContent);
+                cartCount.textContent = currentCount + value;
+            });
+        });
+    </script>
+</body>
+</html>
