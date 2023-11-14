@@ -1,0 +1,85 @@
+<!DOCTYPE html>  <!-- Gabriel Baca - Todo List -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Todo List</title>
+<style>
+  /* Estilos */
+  .tachado {
+    text-decoration: line-through;
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <input type="text" id="new-todo" placeholder="Add a new task">
+  <button onclick="addTodo()">Add Todo</button>
+</div>
+
+<ul id="todo-list">
+  <!-- TTodo Agregar lista -->
+</ul>
+
+<button onclick="completeAll()">Complete All</button>
+
+<script>
+// JavaScript 
+
+function addTodo() {
+  var input = document.getElementById('new-todo');
+  var todoText = input.value;
+  if (todoText === '') {
+    alert('Agrega una Tarea.');
+    return;
+  }
+
+  var li = document.createElement('li');
+  var checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.onclick = toggleTodo;
+
+  var span = document.createElement('span');
+  span.textContent = todoText;
+
+  var deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'x';
+  deleteBtn.onclick = deleteTodo;
+
+  li.appendChild(checkbox);
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
+
+  document.getElementById('todo-list').appendChild(li);
+
+  input.value = '';
+}
+
+function toggleTodo(event) {
+  var checkbox = event.target;
+  var todo = checkbox.nextSibling;
+  if (checkbox.checked) {
+    todo.classList.add('tachado');
+  } else {
+    todo.classList.remove('tachado');
+  }
+}
+
+function deleteTodo(event) {
+  var todo = event.target.parentNode;
+  todo.remove();
+}
+
+function completeAll() {
+  var todos = document.getElementById('todo-list').children;
+  for (var i = 0; i < todos.length; i++) {
+    var checkbox = todos[i].getElementsByTagName('input')[0];
+    checkbox.checked = true;
+    var todo = checkbox.nextSibling;
+    todo.classList.add('tachado');
+  }
+}
+</script>
+
+</body>
+</html>
