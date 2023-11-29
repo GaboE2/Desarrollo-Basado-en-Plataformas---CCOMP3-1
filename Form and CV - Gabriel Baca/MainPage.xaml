@@ -1,0 +1,21 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Crea tu CV" FontSize="Large" HorizontalOptions="Center"/>
+
+            <Entry x:Name="nombreEntry" Placeholder="Nombre completo"/>
+            <Entry x:Name="correoEntry" Placeholder="Correo electrónico" Keyboard="Email"/>
+            <Entry x:Name="celularEntry" Placeholder="Celular" Keyboard="Telephone"/>
+            <Entry x:Name="direccionEntry" Placeholder="Dirección"/>
+            <Editor x:Name="experienciaEditor" Placeholder="Experiencia Laboral" HeightRequest="100"/>
+            <Editor x:Name="formacionEditor" Placeholder="Formación" HeightRequest="100"/>
+            <Entry x:Name="idiomasEntry" Placeholder="Idiomas"/>
+            <Entry x:Name="aptitudesEntry" Placeholder="Aptitudes y Habilidades"/>
+
+            <Button Text="Crear CV" Clicked="OnCrearCVClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
